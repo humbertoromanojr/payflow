@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
+import 'package:payflow/shared/widgets/social_login/social_login_button.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -28,13 +29,13 @@ class _LoginPageState extends State<LoginPage> {
               color: AppColors.primary,
             ),
             Positioned(
-                top: 40, 
+                top: 60, 
                 left: 0, 
                 right: 0, 
-                child: Image.asset(AppImages.person, width: 208, height: 373)
+                child: Image.asset(AppImages.person, width: 208, height: 300)
             ),
             Positioned(
-              bottom: sizeScreen.height * 0.17,
+              bottom: sizeScreen.height * 0.2,
               left: 0, 
               right: 0,
               child: Column(
@@ -43,11 +44,12 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Image.asset(AppImages.logomini),
                   Padding(
-                    padding: const EdgeInsets.only(left: 70, right: 70),
+                    padding: const EdgeInsets.only(top: 30, left: 70, right: 70),
                     child: Text("Organize your slips in one place", 
                     textAlign: TextAlign.center,
                     style: TextStyles.titleHome),
-                  )
+                  ),
+                  SocialLoginButton()
                 ],
               ),
             )
