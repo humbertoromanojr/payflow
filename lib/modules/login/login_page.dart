@@ -29,14 +29,13 @@ class _LoginPageState extends State<LoginPage> {
               color: AppColors.primary,
             ),
             Positioned(
-                top: 60, 
-                left: 0, 
-                right: 0, 
-                child: Image.asset(AppImages.person, width: 208, height: 300)
-            ),
+                top: 60,
+                left: 0,
+                right: 0,
+                child: Image.asset(AppImages.person, width: 208, height: 300)),
             Positioned(
               bottom: sizeScreen.height * 0.2,
-              left: 0, 
+              left: 0,
               right: 0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -44,14 +43,20 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Image.asset(AppImages.logomini),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30, left: 70, right: 70),
-                    child: Text("Organize your slips in one place", 
-                    textAlign: TextAlign.center,
-                    style: TextStyles.titleHome),
+                    padding:
+                        const EdgeInsets.only(top: 30, left: 70, right: 70),
+                    child: Text("Organize your slips in one place",
+                        textAlign: TextAlign.center,
+                        style: TextStyles.titleHome),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 40, left: 40, right: 40),
-                    child: SocialLoginButton(),
+                    padding:
+                        const EdgeInsets.only(top: 40, left: 40, right: 40),
+                    child: SocialLoginButton(
+                      onTap: () {
+                        print("click me!");
+                      },
+                    ),
                   )
                 ],
               ),
