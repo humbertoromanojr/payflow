@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
+import 'package:payflow/shared/themes/app_text_styles.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -26,15 +27,27 @@ class _LoginPageState extends State<LoginPage> {
               height: sizeScreen.height * 0.4,
               color: AppColors.primary,
             ),
-            Positioned(top: 40, left: 0, right: 0, child: Image.asset(AppImages.person, width: 208, height: 373)),
             Positioned(
-              bottom: sizeScreen.height * 0.27,
-              left: 0, right: 0,
+                top: 40, 
+                left: 0, 
+                right: 0, 
+                child: Image.asset(AppImages.person, width: 208, height: 373)
+            ),
+            Positioned(
+              bottom: sizeScreen.height * 0.17,
+              left: 0, 
+              right: 0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(AppImages.logomini)
+                  Image.asset(AppImages.logomini),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 70, right: 70),
+                    child: Text("Organize your slips in one place", 
+                    textAlign: TextAlign.center,
+                    style: TextStyles.titleHome),
+                  )
                 ],
               ),
             )
