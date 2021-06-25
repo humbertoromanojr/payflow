@@ -14,12 +14,11 @@ class AuthController {
       _user = user;
       _isAuthenticated = true;
 
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+      Navigator.restorablePushReplacementNamed(context, "/home");
     } else {
       _isAuthenticated = false;
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginPage()));
+      
+       Navigator.restorablePushReplacementNamed(context, "/login");
     }
   }
 }
