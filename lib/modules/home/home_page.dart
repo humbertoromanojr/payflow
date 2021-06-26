@@ -2,8 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 
-class HomePage extends StatelessWidget {
+import 'home_controller.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final controller = HomeController();
+  final pages = [
+    Container(color: Colors.red),
+    Container(color: Colors.blue),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +52,17 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      body: pages[controller.currentPage],
       bottomNavigationBar: Container(
           height: 90,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.setPage(0);
+                  setState(() {});
+                },
                 icon: Icon(Icons.home),
                 color: AppColors.primary,
               ),
@@ -65,7 +82,10 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.setPage(1);
+                  setState(() {});
+                },
                 icon: Icon(Icons.description_outlined),
                 color: AppColors.body,
               ),
