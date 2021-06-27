@@ -13,35 +13,38 @@ class BarcodeScannerPage extends StatefulWidget {
 class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text(
-          "Scan the barcode of billet.",
-          style: TextStyles.buttonBackground,
+    return RotatedBox(
+      quarterTurns: 1,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Text(
+            "Scan the barcode of billet.",
+            style: TextStyles.buttonBackground,
+          ),
+          leading: BackButton(
+            color: AppColors.background,
+          ),
         ),
-        leading: BackButton(
-          color: AppColors.background,
+        body: Column(
+          children: [
+            Expanded(child: Container(color: Colors.black,)),
+            Expanded(
+              flex: 2,
+              child: Container(
+                color: Colors.transparent,
+                )
+              ),
+            Expanded(child: Container(color: Colors.black,)),
+            ],
+          ),
+        bottomNavigationBar: 
+          SetLabelButtons(
+            primaryLabel: "Insert code from billet", 
+            primaryOnPressed: () {},
+            secondaryLabel: "Insert code billet from gallery", 
+            secondaryOnPressed: () {}
         ),
-      ),
-      body: Column(
-        children: [
-          Expanded(child: Container(color: Colors.black,)),
-          Expanded(
-            flex: 2,
-            child: Container(
-              color: Colors.transparent,
-              )
-            ),
-          Expanded(child: Container(color: Colors.black,)),
-          ],
-        ),
-      bottomNavigationBar: 
-        SetLabelButtons(
-          primaryLabel: "Insert code from billet", 
-          primaryOnPressed: () {},
-          secondaryLabel: "Insert code billet from gallery", 
-          secondaryOnPressed: () {}
       ),
     );
   }
