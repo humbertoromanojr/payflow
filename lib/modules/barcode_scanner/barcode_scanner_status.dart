@@ -20,6 +20,11 @@ class BarcodeScannerStatus {
         isCameraAvaliable: true,
         cameraController: controller,
       );
+  
+  factory BarcodeScannerStatus.error(String message) =>
+    BarcodeScannerStatus(
+      error: message,
+    );
 
   bool get showCamera => isCameraAvaliable && error.isEmpty;
 
