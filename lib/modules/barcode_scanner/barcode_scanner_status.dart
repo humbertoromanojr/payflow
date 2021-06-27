@@ -9,11 +9,17 @@ class BarcodeScannerStatus {
 
   // constructor
   BarcodeScannerStatus({
-    required this.isCameraAvaliable,
+    this.isCameraAvaliable = false,
     this.cameraController,
     this.error = "",
     this.barcode = "",
   });
+
+  factory BarcodeScannerStatus.available(CameraController controller) =>
+      BarcodeScannerStatus(
+        isCameraAvaliable: true,
+        cameraController: controller,
+      );
 
   bool get showCamera => isCameraAvaliable && error.isEmpty;
 
