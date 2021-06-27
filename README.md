@@ -1,13 +1,10 @@
 <h1 align="center">
-  <img src="" width="200" alt="" border="0">
-<br>
-<br>
 PAY FLOW
 </h1>
 
 
-> Status do Projeto: Em desenvolvimento :warning: => :construction::construction::construction::construction::construction:
-:guitar: JR Dev :guitar:
+> Project Status: Under Development  => :construction::construction::construction::construction::construction:
+  :guitar: JR Dev :guitar:
 
 
 ![Badge](https://img.shields.io/static/v1?label=flutter&message=FrameWork&color=blue&style=for-the-badge&logo=FLUTTER)
@@ -21,7 +18,7 @@ PAY FLOW
 
 
 ## MOBILE
-:dart: :blue_heart: **Dart** — Is a client-optimized language for fast apps on any platform
+:dart: :blue_heart: **Dart** — Is a client-optimized language for fast apps on any platform <br />
 :dart: :blue_heart: **Flutter** — Is Google’s UI toolkit for building beautiful, natively compiled applications for mobile Android and IOS, web, and desktop from a single codebase.
 
 :dart: [cupertino_icons](https://pub.dev/packages/cupertino_icons) <br />
