@@ -1,18 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 import 'package:payflow/shared/widgets/input_text/input_text_widget.dart';
 import 'package:payflow/shared/widgets/set_label_buttons/set_label_buttons.dart';
 
 class InsertBoletoPage extends StatefulWidget {
-  const InsertBoletoPage({Key? key}) : super(key: key);
+  final String? barcode;
+
+  const InsertBoletoPage({
+    Key? key,
+    this.barcode,
+  }) : super(key: key);
 
   @override
   _InsertBoletoPageState createState() => _InsertBoletoPageState();
 }
 
 class _InsertBoletoPageState extends State<InsertBoletoPage> {
+  final moneyInputTextController = MoneyMaskedTextController(
+    leftSymbol: "R\$",
+    decimalSeparator: ",",
+  );
+  final duedateInputTextController = MaskedTextController(mask: "00/00/0000");
+  final barcodeInputController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +55,7 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
               onChanged: (value) {},
             ),
             InputTextWidget(
-              label: "Maturity",
+              label: "Duedate",
               icon: FontAwesomeIcons.timesCircle,
               onChanged: (value) {},
             ),
