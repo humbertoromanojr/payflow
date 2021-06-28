@@ -16,7 +16,6 @@ PAY FLOW
 ![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fhumbertoromanojr%2Fpayflow)
 
 
-
 ## MOBILE
 :dart: :blue_heart: **Dart** — Is a client-optimized language for fast apps on any platform <br />
 :dart: :blue_heart: **Flutter** — Is Google’s UI toolkit for building beautiful, natively compiled applications for mobile Android and IOS, web, and desktop from a single codebase.
@@ -31,6 +30,9 @@ PAY FLOW
 :dart: [shared_preferences](https://pub.dev/packages/shared_preferences) <br />
 :dart: [google_ml_kit](https://pub.dev/packages/google_ml_kit) <br />
 :dart: [camera](https://pub.dev/packages/camera) <br />
+:dart: [animated_card](https://pub.dev/packages/animated_card) <br />
+:dart: [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter) <br />
+:dart: [flutter_masked_text2](https://pub.dev/packages/flutter_masked_text2) <br />
 
 
 
