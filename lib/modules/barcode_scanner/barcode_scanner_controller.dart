@@ -49,7 +49,7 @@ class BarcodeScannerController {
 
       return;
     } catch (e) {
-      print("ERRO DA LEITURA $e");
+      print("READING ERROR $e");
     }
   }
 
@@ -63,7 +63,7 @@ class BarcodeScannerController {
     status = BarcodeScannerStatus.available();
     Future.delayed(Duration(seconds: 20)).then((value) {
       if (status.hasBarcode == false)
-        status = BarcodeScannerStatus.error("Timeout de leitura de boleto");
+        status = BarcodeScannerStatus.error("Billet Reading Timeout");
     });
   }
 

@@ -103,11 +103,11 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                 return BottomSheetWidget(
                   title: "Unable to identify the barcode.",
                   subtitle: "Try scanning again or enter your bank slip code.",
-                  primaryLabel: "Escanear novamente",
+                  primaryLabel: "Rescan",
                   primaryOnPressed: () {
                     controller.scanWithCamera();
                   },
-                  secondaryLabel: "Digitar código",
+                  secondaryLabel: "Enter code",
                   secondaryOnPressed: () {},
                 );
               } else {
