@@ -25,7 +25,15 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
     decimalSeparator: ",",
   );
   final duedateInputTextController = MaskedTextController(mask: "00/00/0000");
-  final barcodeInputController = TextEditingController();
+  final barcodeInputTextController = TextEditingController();
+
+  @override
+    void initState() {
+      if(widget.barcode != null){
+        barcodeInputTextController.text = widget.barcode!; 
+      }
+      super.initState();
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -55,16 +63,19 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
               onChanged: (value) {},
             ),
             InputTextWidget(
+              controller: duedateInputTextController,
               label: "Duedate",
               icon: FontAwesomeIcons.timesCircle,
               onChanged: (value) {},
             ),
             InputTextWidget(
+              controller: moneyInputTextController,
               label: "Value",
               icon: FontAwesomeIcons.wallet,
               onChanged: (value) {},
             ),
             InputTextWidget(
+              controller: barcodeInputTextController,
               label: "Code",
               icon: FontAwesomeIcons.barcode,
               onChanged: (value) {},
