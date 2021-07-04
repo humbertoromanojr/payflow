@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class InsertBoletoController{
+class InsertBoletoController {
   final formKey = GlobalKey<FormState>();
 
   String? validateName(String? value) =>
@@ -11,4 +11,11 @@ class InsertBoletoController{
       value == 0 ? "Enter a value greater than R\$ 0,00" : null;
   String? validateCodigo(String? value) =>
       value?.isEmpty ?? true ? "Billet code cannot be empty" : null;
+
+  // register
+  void regiterBillet() {
+    final form = formKey.currentState;
+
+    if(form!.validate()){}
+  }
 }
