@@ -116,8 +116,9 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
           Navigator.pop(context);
         },
         secondaryLabel: "Register",
-        secondaryOnPressed: () {
-          controller.regiterBillet();
+        secondaryOnPressed: () async {
+          await controller.regiterBillet();
+          Navigator.pop(context);
         },
       ),
     );
