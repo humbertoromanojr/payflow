@@ -7,6 +7,8 @@ import 'package:payflow/shared/themes/app_text_styles.dart';
 import 'package:payflow/shared/widgets/input_text/input_text_widget.dart';
 import 'package:payflow/shared/widgets/set_label_buttons/set_label_buttons.dart';
 
+import 'insert_boleto_controller.dart';
+
 class InsertBoletoPage extends StatefulWidget {
   final String? barcode;
 
@@ -20,6 +22,8 @@ class InsertBoletoPage extends StatefulWidget {
 }
 
 class _InsertBoletoPageState extends State<InsertBoletoPage> {
+  final controller = InsertBoletoController();
+
   final moneyInputTextController = MoneyMaskedTextController(
     leftSymbol: "R\$",
     decimalSeparator: ",",
@@ -28,12 +32,12 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
   final barcodeInputTextController = TextEditingController();
 
   @override
-    void initState() {
-      if(widget.barcode != null){
-        barcodeInputTextController.text = widget.barcode!; 
-      }
-      super.initState();
+  void initState() {
+    if (widget.barcode != null) {
+      barcodeInputTextController.text = widget.barcode!;
     }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
