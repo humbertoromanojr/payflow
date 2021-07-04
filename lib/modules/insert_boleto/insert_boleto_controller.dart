@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:payflow/shared/models/boleto_model.dart';
 
 class InsertBoletoController {
   final formKey = GlobalKey<FormState>();
+  BoletoModel model = BoletoModel();
 
   String? validateName(String? value) =>
       value?.isEmpty ?? true ? "The name cannot be empty" : null;
@@ -17,12 +19,19 @@ class InsertBoletoController {
     String? dueDate,
     double? value,
     String? barcode,
-  }) {}
-  
+  }) {
+    model = model.copyWith(
+      name: name,
+      dueDate: dueDate,
+      value: value,
+      barcode: barcode,
+    );
+  }
+
   // register
   void regiterBillet() {
     final form = formKey.currentState;
 
-    if(form!.validate()){}
+    if (form!.validate()) {}
   }
 }
