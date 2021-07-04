@@ -48,54 +48,55 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
         leading: BackButton(color: AppColors.input),
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 93, vertical: 24),
-              child: Text(
-                "Fill in the payment slip data",
-                style: TextStyles.titleBoldHeading,
-                textAlign: TextAlign.center,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 93, vertical: 24),
+                child: Text(
+                  "Fill in the payment slip data",
+                  style: TextStyles.titleBoldHeading,
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-            Form(
-                key: controller.formKey,
-                child: Column(
-                  children: [
-                    InputTextWidget(
-                      label: "Name to billet",
-                      icon: Icons.description_outlined,
-                      onChanged: (value) {},
-                      validator: controller.validateName,
-                    ),
-                    InputTextWidget(
-                      controller: duedateInputTextController,
-                      label: "Duedate",
-                      icon: FontAwesomeIcons.timesCircle,
-                      validator: controller.validateVencimento,
-                      onChanged: (value) {},
-                    ),
-                    InputTextWidget(
-                      controller: moneyInputTextController,
-                      label: "Value",
-                      icon: FontAwesomeIcons.wallet,
-                      validator: (_) => controller
-                          .validateValor(moneyInputTextController.numberValue),
-                      onChanged: (value) {},
-                    ),
-                    InputTextWidget(
-                      controller: barcodeInputTextController,
-                      label: "Code",
-                      icon: FontAwesomeIcons.barcode,
-                      validator: controller.validateCodigo,
-                      onChanged: (value) {},
-                    ),
-                  ],
-                ))
-          ],
+             Form(
+               key: controller.formKey,
+               child: Column(
+               children: [
+                  InputTextWidget(
+                    label: "Name to billet",
+                    icon: Icons.description_outlined,
+                    onChanged: (value) {},
+                    validator: controller.validateName,
+                  ),
+                  InputTextWidget(
+                    controller: duedateInputTextController,
+                    label: "Duedate",
+                    icon: FontAwesomeIcons.timesCircle,
+                    validator: controller.validateVencimento,
+                    onChanged: (value) {},
+                  ),
+                  InputTextWidget(
+                    controller: moneyInputTextController,
+                    label: "Value",
+                    icon: FontAwesomeIcons.wallet,
+                    validator: (_) => controller.validateValor(moneyInputTextController.numberValue),
+                    onChanged: (value) {},
+                  ),
+                  InputTextWidget(
+                    controller: barcodeInputTextController,
+                    label: "Code",
+                    icon: FontAwesomeIcons.barcode,
+                    validator: controller.validateCodigo,
+                    onChanged: (value) {},
+                  ),
+               ],
+             ))
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: SetLabelButtons(
