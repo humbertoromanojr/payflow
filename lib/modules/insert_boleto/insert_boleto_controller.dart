@@ -12,6 +12,13 @@ class InsertBoletoController {
   String? validateCodigo(String? value) =>
       value?.isEmpty ?? true ? "Billet code cannot be empty" : null;
 
+  void onChange({
+    String? name,
+    String? dueDate,
+    double? value,
+    String? barcode,
+  }) {}
+  
   // register
   void regiterBillet() {
     final form = formKey.currentState;
