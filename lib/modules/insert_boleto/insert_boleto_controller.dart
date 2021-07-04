@@ -1,4 +1,8 @@
+import 'package:flutter/material.dart';
+
 class InsertBoletoController{
+  final formKey = GlobalKey<FormState>();
+
   String? validateName(String? value) =>
       value?.isEmpty ?? true ? "The name cannot be empty" : null;
   String? validateVencimento(String? value) =>
