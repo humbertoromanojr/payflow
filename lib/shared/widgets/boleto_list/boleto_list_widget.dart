@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:payflow/shared/models/boleto_model.dart';
+import 'package:payflow/shared/widgets/boleto_tile/boleto_tile_widget.dart';
+import 'boleto_list_controller.dart';
+
 class BoletoListWidget extends StatefulWidget {
   BoletoListWidget({Key? key}) : super(key: key);
 
@@ -8,10 +12,11 @@ class BoletoListWidget extends StatefulWidget {
 }
 
 class _BoletoListWidgetState extends State<BoletoListWidget> {
+  final controller = BoletoListController();
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: null,
-    );
+    return Column(
+      children: controller.billets.map((e) => BoletoTileWidget(data: e)).toList());
   }
 }
