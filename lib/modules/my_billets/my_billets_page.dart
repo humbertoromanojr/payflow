@@ -14,33 +14,45 @@ class MyBilletsPage extends StatefulWidget {
 class _MyBilletsPageState extends State<MyBilletsPage> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        children: [
-          BoletoInfoWidget(size: 14),
-          Padding(
-            padding: const EdgeInsets.only(top: 24),
-            child: Row(
-              children: [
-                Text(
-                  "My Billets", 
-                  style: TextStyles.titleBoldHeading
-                ),
-              ],
+    return Column(
+      children: [
+        Stack(
+          children: [
+            Container(
+              height: 40, 
+              width: double.maxFinite,
+              color: AppColors.primary,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 24),
-            child: Divider(
-              thickness: 1,
-              height: 1,
-              color: AppColors.stroke,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: BoletoInfoWidget(size: 14),
             ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 24, left: 24, right: 24),
+          child: Row(
+            children: [
+              Text(
+                "My Billets", 
+                style: TextStyles.titleBoldHeading
+              ),
+            ],
           ),
-          BoletoListWidget()
-        ],
-      ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
+          child: Divider(
+            thickness: 1,
+            height: 1,
+            color: AppColors.stroke,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: BoletoListWidget(),
+        )
+      ],
     );
   }
 }
