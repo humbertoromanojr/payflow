@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
+import 'package:payflow/shared/widgets/boleto_info/boleto_info_widget.dart';
 import 'package:payflow/shared/widgets/boleto_list/boleto_list_widget.dart';
 
 class MyBilletsPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _MyBilletsPageState extends State<MyBilletsPage> {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
+          BoletoInfoWidget(size: 14),
           Padding(
             padding: const EdgeInsets.only(top: 24),
             child: Row(
