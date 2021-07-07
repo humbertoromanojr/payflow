@@ -12,9 +12,9 @@ class AuthController {
       saveUser(user);
       _user = user;
 
-      Navigator.restorablePushReplacementNamed(context, "/home");
+      Navigator.pushReplacementNamed(context, "/home", arguments: user);
     } else {
-      Navigator.restorablePushReplacementNamed(context, "/login");
+      Navigator.pushReplacementNamed(context, "/login");
     }
   }
 
