@@ -22,10 +22,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
-  final pages = [
-    MyBilletsPage(),
-    ExtractPage(),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +58,11 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: pages[controller.currentPage],
+      body: [
+              MyBilletsPage(key: UniqueKey()),
+              ExtractPage(key: UniqueKey()),
+            ]
+            [controller.currentPage],
       bottomNavigationBar: Container(
           height: 90,
           child: Row(
@@ -79,9 +79,9 @@ class _HomePageState extends State<HomePage> {
                     : AppColors.body,
               ),
               GestureDetector(
-                onTap: () {
-                  // Navigator.pushNamed(context, "/barcode_scanner");
-                  Navigator.pushNamed(context, "/insert_boleto");
+                onTap: () async{
+                  await Navigator.pushNamed(context, "/barcode_scanner");
+                  setState(() {});
                 },
                 child: Container(
                   height: 56,
