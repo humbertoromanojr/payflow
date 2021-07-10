@@ -57,6 +57,9 @@ Step by step get your google service
 ## Demonstration
 <h2 align="center">
   <img src="https://i.ibb.co/V9CdgNw/capa.png" alt="capa" border="0">
+<br />
+<br />
+  <img src="https://i.ibb.co/2MFnfMf/pay-flow.png" alt="pay-flow" border="0">
 </h2>
 
 
