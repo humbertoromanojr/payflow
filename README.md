@@ -3,7 +3,7 @@
 </h1>
 
 
-> Project Status: Under Development  => :construction::construction::construction::construction::construction:
+> Project Status: Finalized  => :blue_heart:
   :guitar: JR Dev :guitar:
 
 
